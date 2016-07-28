@@ -1,0 +1,152 @@
+   Should the first language be :strips or :strips+typing?
+
+I would strongly argue for strips (for this year). Typing is actually a bit
+complex due to inheritence and the objective of this category would be to
+get absolutely EVERYONE to be able to compete.
+
+   Should the second language include axioms or not?  Many of the example
+   domains  do use axioms.
+
+This is harder. 
+I can only say that many of our new planners don't handle axioms (yet). 
+if axiom reasoning just let a planner run faster then they should certainly
+be included. Perhaps they should be included anyway - there really isn't
+anything hard about them. i could go either way for this year. 
+
+   Is it reasonable to restrict the competition to a single platform?  It will 
+   make our life much simpler since otherwise it is not clear how to compare 
+   entries across platforms.
+
+I might hold off on this one for this year - or at least not commit to it
+at this point. Allowing variety in platforms makes the comparison weaker,
+but it encourages more entries - it's hard to get your system ported
+especially if you don't have access to the right kind of machine before teh
+competition. Next year one could tighten here. 
+
+   I prefer my scoring method over Drew's, but you can let me know what you 
+   think. Steve gave me the idea and told me that ranking is a standard trick in 
+   many statistical comparisons.  The flaw with Drew's is that it is heavily 
+   weighted towards time since the different in solution lengths is likely to be 
+   much smaller than the differences in solution time.
+
+I don't see why the different tracks shouldn't have different scoring
+methods. 
+
+   If you can send me comments by Monday, I will incorporate them and send it out 
+   to the rest of the group.
+
+Thanks so much for writing this!
+
+
+   AIPS'98 Planning Systems Competition -- Preliminary Call for Participation
+
+Maybe say "preliminary call"
+Maybe plan to post to the planning list for feedback?  Not sure. 
+
+
+   The 1998 AI Planning Systems Conference will host the first bi-annual
+   planning systems competition.  The goal of this competition is to
+   foster development of state-of-the-art planning systems and to
+   encourage the comparison of competing approaches to planning.  The
+   competition will be comprised of two tracks, one on general approaches
+   to operator-based planning and a second one on planners for solving a
+   specific transporation planning domain.  Contestants can compete in
+   either or both tracks of the competition.
+
+I might call them THREE tracks - strips operator, adl operator, transport.
+
+
+   Operator-based Planning Competition
+
+   In this track, competitors will submit an operator-based planner that
+   takes a planning domain and a planning problem in a predefined format
+   and produces a plan that solves the given problem.  Planners will be
+   evaluated based on both how quickly the plans are produced and the
+   length of the resulting plans.
+
+
+   Planner Language:
+
+   Planners entered in this track of the competition will be divided into
+   two classes based on the operator language supported by the planner:  
+   1) Planners that support conjunctive preconditions and a simple
+   effects list.
+   2) Planners that support an extended language that includes typing,
+   disjunctive preconditions, equality, quantified preconditions,
+   conditional effects, and axioms.  
+   The precise syntax of the operators and problems is provided in the
+   document, PDDL -- The Planning Domain Definition Language
+      http://...
+   In terms of PDDL, the first class corresponds to a planner that
+   supports :strips and the second class corresponds to
+   :adl + :domain-axioms + :subgoal-through-axioms.  
+
+   For each of these classes of languages, the planners will be tested on
+   sets of problems from two domains.  The first domain will be chosen
+   from the set of PDDL domains that are available in:
+      http://...
+   The second domain will be a previously unseen domain that will not be 
+   available prior to the competition.  
+
+
+   Mechanics:
+
+   Each planner entry must run as a standalone program on a SUN Ultra
+   workstation running Solaris.  C or C++ entries need only provide a
+   binary executable.  Lisp entries need to provide a shell script that
+   invokes a Lisp executable and runs the given problem.  We will provide
+   Allegro Common Lisp for the competition.  The planners will be given
+
+Again, some people don't use allegro - can't test on it.
+
+   10 minutes of CPU time per problem.  The programs should take three
+   parameters as input, the file name containing the domain defintion,
+   the file name containing a single problem definition, and the file
+   name where the solution should be stored.  The format for the input
+   files is defined in the PDDL manual.  The output file should be in the
+   following format:
+
+   ((op1 arg1 ... argn)
+   (op2 arg1 ... argn)
+   .
+   .
+   .
+   (opn arg1 ... argn))
+
+   If no solution exists, then the output would be the empty list: ().
+
+I'd suggest :NO-PLAN since the plan with zero steps might solve some
+problem.
+
+   Axioms used in the plan should not be included in the printed
+   solution.  We will make example input and output files available prior
+   to the contest. 
+
+
+   Scoring:
+
+   The set of planners for each language class will be ranked by both
+   total CPU time used and total length for all solutions.  If a planner
+   fails to find a solution to a problem, then the length will be the
+   maximum length found by any of the planners for that problem.
+
+I feel pretty strongly that there should be a bigger penalty for failing to
+find a plan. I could imagine someone winning by solving one easy problem
+and quiting quickly on all other problems. 
+
+Perhaps even score based on number solved, then time, then length;
+instead of time, then length.
+   
+   The
+   final score for each planner will be the sum of the two ranks.  Ties
+   will be broken by the planner that performed better on planning time.
+   For example, a planner that was ranked 1 on for time and ranked 2 for
+   length would have a final score of 3 and would win over a planner that
+   ranked 1 for length and 2 for time.
+
+   Updates and examples problems will be available from http://...
+   Please check this site periodically for any rule changes or refinements.
+
+Thanks again for writing this up - looks great!!
+
+Dan
