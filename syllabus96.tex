@@ -1,0 +1,271 @@
+\documentstyle[fullpage,named]{article}
+
+\begin{document}
+
+{\flushleft
+{\centerline
+{\Large CS 541: Artificial Intelligence Planning}
+}}
+
+\vspace{.2in}
+
+{\flushleft
+{\large Instructors: Yolanda Gil and Craig Knoblock}
+}
+
+{\flushleft
+{\large Meeting Time and Location: TTH, 3:30-4:50pm, GFS 108}
+}
+
+\vspace{.2in}
+
+Planning has been an area of research in Artificial Intelligence for
+over two decades.  It is concerned with the synthesis of sequences of
+actions (plans) that can be used by agents to achieve their desired
+goals.  Planning involves the representation of actions and world
+models, reasoning about the effects of actions, and techniques for
+efficiently searching the space of possible plans.  Planning has been
+used to automate a variety of tasks including robotic control,
+process planning, information gathering, transportation planning,
+experiment planning in molecular genetics, and spacecraft mission sequencing.
+
+This will be an exciting and challenging course that will focus on the
+basic foundations and techniques in planning and survey a wide variety
+of planning systems.  The class will be run as a lecture course with
+lots of student participation.  The topics covered in the course will
+include:
+
+\begin{tabbing}
+xxxxx\= \kill
+\>Action and Plan Representation\\
+\>Generative Planning\\
+\>Reactive Systems\\
+\>Abstraction and Hierarchical Planning\\
+\>Case-based Planning\\
+\>Machine Learning in Planning\\
+\>Extended Plan Representations\\
+\>Real-World Planning Applications
+\end{tabbing}
+
+{\flushleft Prerequisites: CS561 -- Introduction to AI }
+
+{\flushleft Grading: Grades will be based on homeworks, quizes, a course project, 
+class presentation, and class participation.}
+
+{\flushleft Textbook: ``Readings in Planning'' by Allen, Hendler, and
+Tate \cite{allen90}.}
+
+{\flushleft Office Hours: immediately after class or by appointment,
+contact Craig Knoblock at knoblock@isi.edu or Yolanda Gil at gil@isi.edu}
+
+{\flushleft Student responsibilities in the class will consist of the following:}
+
+\begin{enumerate}
+\item Presentations and Class Participation[20\% of final grade]\\
+Class presentations that provide a detailed analysis of one of the
+articles listed below or other related papers.  The presenter will
+hand out a 2-3 page analysis of the papers describing: the principal
+contributions of the paper, the principal weaknesses of the paper, and
+suggested extensions to the work.
+
+\item Homework assignments. [20\% of final grade]
+
+\item Final exam and short quizes given in class. [30\% of final grade]
+
+\item A course project. [30\% of final grade]\\
+A project includes any of the following:
+\begin{enumerate}
+\item Implementing an extension to an existing planning system to
+      enhance its capabilities.
+\item Building a new planning system.
+\item Writing a new domain for an existing planner.
+\item Anything else that you can convince us would make an interesting
+      project.
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+{\large\bf Course Syllabus and Schedule}
+
+\begin{enumerate}
+
+\item \underline{INTRODUCTION/MOTIVATION}, {\bf Aug 29 (Knoblock)}
+   \begin{itemize}
+   \item Real-World Planning Problems
+   \item Action and Plan Representation
+   \item Historical Overview (GPS, STRIPS, etc.) \cite[chapter 15]{cohen82}
+   \end{itemize}
+
+\item \underline{PLANNING APPROACHES}
+
+  \begin{itemize}
+  \item Generative Planning 
+
+      \begin{itemize}
+      \item MTC Planners
+	\begin{itemize}
+        \item NOAH (Sacerdoti) \cite[pages 162-170]{allen90}, {\bf Sept 3 (Knoblock)}
+        \item TWEAK (Chapman) \cite[pages 537-558]{allen90}, {\bf Sept 5 (Knoblock)} 
+
+%        \item O-Plan (Currie and Tate) \cite[pages 361-368]{allen90} 
+        \item SIPE (Wilkins) \cite[pages 319-335]{allen90}, {\bf Sept 10 (Gil)}
+	\end{itemize}
+
+      \item Causal-Link Planning, {\bf Sept 12 (Knoblock)}
+	\begin{itemize}
+        \item SNLP (McAllester and Rosenblitt) \cite{mcallester91}
+        \item UCPOP (Weld) \cite{weld94:pop}
+	\end{itemize}
+
+      \item Unified Framework, {\bf Sept 17 (Knoblock)}
+	\begin{itemize}
+	\item Planning as Refinement Search \cite{kambhampati95:joint-aij} 
+	\end{itemize}
+  \end{itemize}
+
+
+  \item Case-based Planning, {\bf Sept 19 (Veloso)} 
+      \begin{itemize}
+      \item Prodigy/Analogy \cite{veloso94:analogy}
+      \item CHEF (Hammond) \cite[pages 655-659]{allen90}
+      \end{itemize}
+
+  \item New Approaches, {\bf Sept 24 (Knoblock)}   
+      \begin{itemize}
+      \item Planning by Graph Analysis \cite{blum95:ijcai}
+      \item Planning as Stochastic Search \cite{kautz96:aaai}
+     \end{itemize}
+
+  \item Hierarchical Task Network Planning, {\bf Sept 26 (Gil)}
+     \begin{itemize}
+     \item Nonlin \cite[pages 291-296]{allen90}
+     \item (Barrett and Weld)\cite{barrett94:aaai} 
+     \end{itemize}
+
+  \item New Approaches, {\bf Oct 1 (Knoblock)}   
+      \begin{itemize}
+      \item Approximate Planning \cite{ginsberg94:aips}
+      \item Planning as Constraint Satisfaction \cite{joslin96:aaai}
+      \end{itemize}
+
+  \item Reactive Systems, {\bf Oct 3 (Gil)}
+      \begin{itemize}       
+%      \item (Kaebling) \cite[pages 713--728]{allen90}
+      \item Anytime Algorithms (Dean and Boddy) \cite{dean88:anytime}
+      \item PRS (Georgeff and Lansky) \cite[pages 729--734]{allen90}
+      \end{itemize}
+      \end{itemize}
+
+
+
+
+\item \underline{CONTROLLING SEARCH}
+
+  \begin{itemize}
+  \item Planning Complexity, {\bf Oct 8 (Gil)}
+     \begin{itemize}
+     \item Joslin and Roach \cite{joslin89}
+     \item Bylander \cite{bylander92:aips}
+     \end{itemize}
+
+  \item Abstraction and Hierarchical Planning, {\bf Oct 10 (Knoblock)}
+     \begin{itemize}
+     \item (Knoblock) \cite{knoblock91:search} 
+     \item ALPINE \cite{knoblock94:aij}
+     \end{itemize}
+
+  \item Macros and Abstraction, {\bf Oct 15 (Gil)}
+     \begin{itemize}
+     \item Planning as Search \cite[pages 566--578]{allen90}
+     \end{itemize}
+
+  \item Skeletal Planning, {\bf Oct 17 (Gil)}
+     \begin{itemize}
+     \item Molgen \cite[pages 161-180]{friedland85}
+     \end{itemize}
+     
+  \item Learning Control Rules, {\bf Oct 22 (Gil)}
+     \begin{itemize}
+     \item SOAR \cite{rosenbloom92}
+     \item PRODIGY \cite{minton87:ijcai,etzioni90:aaai}
+     \end{itemize}
+
+  \item Postponing Interactions {\bf Oct 24 (Gil)}
+	\begin{itemize}
+	\item Postponing Threats\cite{smith93:aaai}
+	\end{itemize}
+  \end{itemize}
+
+
+\item \underline{INTERACTING WITH THE ENVIRONMENT }
+
+  \begin{itemize}	
+  \item Sensing and Incomplete Information, {\bf Oct 29 (Knoblock)}
+    \begin{itemize}
+    \item UWL \cite{etzioni92:incomplete}
+    \item (Owalski and Gini) \cite{olawsky90}
+    \end{itemize}
+
+  \item Planning and Execution, {\bf Oct 31 (Knoblock)}
+    \begin{itemize}
+    \item IPEM, \cite[pages 735--740]{allen90} 
+    \item Sage \cite{knoblock95:ijcai}
+    \end{itemize}
+
+  \item Learning from the Environment, {\bf Nov 5 (Gil)}
+    \begin{itemize}
+    \item Reinforcement Learning \cite{sutton90} 
+    \item Learning Action Models \cite{gil94}
+    \end{itemize}
+  \end{itemize}
+
+
+\item \underline{EXTENDING THE REPRESENTATION}
+
+  \begin{itemize}
+  \item Temporal Planning, {\bf Nov 7 (Gil)}
+     \begin{itemize}
+     \item DEVISER \cite[pages 297--318]{allen90}
+%     \item FORBIN \cite[pages 369--388]{allen90}
+     \item Zeno \cite{penberthy94:aaai}
+     \end{itemize}
+
+  \item Probabilistic Planning, {\bf Nov 12 (Knoblock)}
+     \begin{itemize}
+     \item Buridan \cite{kushmerick94:aaai}
+     \end{itemize}
+
+  \item Decision Theory, {\bf Nov 14 (Knoblock)}
+     \begin{itemize}
+     \item Feldman and Sproull \cite[pages 207--224]{allen90}
+     \end{itemize}
+  \end{itemize}
+
+\item \underline{PLANNING APPLICATIONS}
+
+  \begin{itemize}
+  \item Planning in the Physical World, {\bf Nov 19 (Gil)}
+    \begin{itemize}
+    \item Robotics \cite{simmons94}
+    \item Process Planning \cite{nau95:ijcai}
+    \end{itemize}
+
+  \item Planning for Software Agents, {\bf Nov 21 (Gil)}
+    \begin{itemize}
+    \item Softbots \cite{etzioni94:softbots}
+    \item Information Gathering \cite{knoblock95:ijcai}
+    \end{itemize}
+  \end{itemize}
+
+\item Project Presentations, {\bf Nov 26, Dec 3, Dec 5}
+
+\item Final Exam, {\bf Dec 10, 4:30-6:30pm}
+\end{enumerate}
+
+\newpage
+\bibliographystyle{named}
+\bibliography{/home/knoblock/bib/defs,/home/knoblock/bib/abs,/home/knoblock/bib/planning,/home/knoblock/bib/knoblock,/home/knoblock/bib/databases,/home/knoblock/bib/learning,/home/knoblock/bib/books}
+
+\end{document}
+
+
