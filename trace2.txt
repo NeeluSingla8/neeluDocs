@@ -1,0 +1,172 @@
+Welcome to graphplan. 'graphplan -h' gives help on command-line args.
+
+give file name for operators: newtower
+puton
+give file name for initial facts: facts loaded.
+X animation? (<CR> for no): number of time steps, or <CR> for automatic: Info type: (2 = max, 0 or <CR> = min): Other: 'I' = look for irrelevants
+       'L' = Lower bound time needed by counting steps
+       'B' = Build up to goals
+       'E' = Don't do mutual exclusions (for testing)
+       'S' = examine subsets:      discarding puton_blockB_blockB_table.
+discarding puton_blockC_blockC_blockA.
+time: 1, 10 facts and 11 exclusive pairs.
+discarding puton_blockC_blockC_table.
+discarding puton_blockC_table_table.
+discarding puton_blockB_blockB_table.
+discarding puton_blockB_table_table.
+discarding puton_blockA_blockA_table.
+discarding puton_blockA_table_table.
+discarding puton_blockB_blockC_blockC.
+discarding puton_blockB_blockB_blockC.
+Avoiding puton_blockB_blockA_blockC, time 1
+discarding puton_blockC_blockC_blockB.
+discarding puton_blockC_blockB_blockB.
+Avoiding puton_blockC_table_blockB, time 1
+discarding puton_blockC_blockC_blockA.
+discarding puton_blockC_blockA_blockA.
+time: 2, 13 facts and 25 exclusive pairs.
+discarding puton_blockC_blockC_table.
+discarding puton_blockC_table_table.
+discarding puton_blockB_blockB_table.
+discarding puton_blockB_table_table.
+discarding puton_blockA_blockA_table.
+discarding puton_blockA_table_table.
+discarding puton_blockB_blockC_blockC.
+discarding puton_blockB_blockB_blockC.
+discarding puton_blockB_blockB_blockA.
+discarding puton_blockB_blockA_blockA.
+discarding puton_blockC_blockC_blockB.
+discarding puton_blockC_blockB_blockB.
+discarding puton_blockC_blockC_blockA.
+discarding puton_blockC_blockA_blockA.
+discarding puton_blockA_blockC_blockC.
+discarding puton_blockA_blockA_blockC.
+discarding puton_blockA_blockB_blockB.
+discarding puton_blockA_blockA_blockB.
+time: 3, 13 facts and 21 exclusive pairs.
+Goals first reachable in 3 steps.
+118 nodes created.
+Printing graph. For clarity, ignoring parts unreachable by planner
+
+Time: 1
+newtower_blockB_table
+   exclusive: puton_blockC_blockB_blockA puton_blockB_blockC_table noop_on_blockB_table 
+puton_blockC_blockB_blockA
+   exclusive: newtower_blockC_blockA noop_on_blockC_blockA newtower_blockB_table puton_blockB_blockC_table noop_clear_blockB 
+newtower_blockC_blockA
+   exclusive: puton_blockB_blockC_table noop_on_blockC_blockA puton_blockC_blockB_blockA 
+puton_blockB_blockC_table
+   exclusive: noop_on_blockB_table newtower_blockC_blockA noop_clear_blockC puton_blockC_blockB_blockA newtower_blockB_table 
+
+Facts: 
+on_blockC_blockA
+   exclusive: clear_blockA on_blockC_blockB 
+on_blockC_blockB
+   exclusive: clear_blockB on_blockB_blockC clear_table on_blockC_blockA 
+clear_table
+   exclusive: on_blockC_blockB 
+on_blockB_blockC
+   exclusive: clear_blockC clear_blockA on_blockB_table on_blockC_blockB 
+on_blockA_table
+on_blockB_table
+   exclusive: on_blockB_blockC 
+clear_blockA
+   exclusive: on_blockC_blockA on_blockB_blockC 
+clear_blockB
+   exclusive: on_blockC_blockB 
+clear_blockC
+   exclusive: on_blockB_blockC 
+
+Time: 2
+newtower_blockB_table
+   exclusive: puton_blockC_table_blockA puton_blockA_blockB_table puton_blockC_blockB_blockA puton_blockB_blockC_table puton_blockB_blockA_table noop_on_blockB_table newtower_blockB_blockC puton_blockB_table_blockC noop_on_blockB_blockC newtower_blockC_blockB puton_blockC_blockA_blockB 
+puton_blockC_blockB_blockA
+   exclusive: newtower_blockA_table puton_blockA_blockC_table newtower_blockC_blockA puton_blockC_table_blockA newtower_blockC_blockB puton_blockC_blockA_blockB newtower_blockB_table newtower_blockB_blockC puton_blockB_blockC_table puton_blockB_blockA_table puton_blockA_blockB_table puton_blockB_table_blockC noop_clear_blockB noop_clear_blockA noop_on_blockB_blockC 
+newtower_blockC_blockA
+   exclusive: newtower_blockA_table puton_blockB_blockC_table newtower_blockB_blockC newtower_blockC_blockB puton_blockC_table_blockA puton_blockB_blockA_table puton_blockA_blockC_table puton_blockA_blockB_table puton_blockC_blockA_blockB noop_clear_blockA puton_blockB_table_blockC noop_on_blockB_blockC puton_blockC_blockB_blockA 
+newtower_blockC_blockB
+   exclusive: puton_blockA_blockC_table newtower_blockB_blockC puton_blockC_blockA_blockB newtower_blockC_blockA puton_blockC_table_blockA puton_blockB_blockC_table puton_blockB_blockA_table puton_blockA_blockB_table noop_clear_blockB puton_blockB_table_blockC noop_on_blockB_blockC puton_blockC_blockB_blockA newtower_blockB_table 
+puton_blockB_blockA_table
+   exclusive: newtower_blockB_blockC puton_blockB_blockC_table noop_on_blockB_table newtower_blockA_table puton_blockA_blockC_table puton_blockA_blockB_table noop_clear_blockA puton_blockC_blockA_blockB puton_blockB_table_blockC noop_on_blockB_blockC puton_blockC_table_blockA newtower_blockC_blockB newtower_blockC_blockA puton_blockC_blockB_blockA newtower_blockB_table 
+puton_blockC_blockA_blockB
+   exclusive: puton_blockB_table_blockC puton_blockB_blockC_table newtower_blockB_blockC newtower_blockA_table puton_blockA_blockC_table puton_blockA_blockB_table noop_clear_blockA noop_clear_blockB noop_on_blockB_blockC puton_blockC_table_blockA puton_blockB_blockA_table newtower_blockC_blockB newtower_blockC_blockA puton_blockC_blockB_blockA newtower_blockB_table 
+newtower_blockB_blockC
+   exclusive: newtower_blockA_table puton_blockB_table_blockC noop_on_blockB_blockC noop_on_blockB_table puton_blockA_blockB_table noop_clear_blockA newtower_blockC_blockA puton_blockB_blockC_table puton_blockA_blockC_table puton_blockC_table_blockA noop_clear_blockC newtower_blockC_blockB puton_blockC_blockA_blockB puton_blockB_blockA_table puton_blockC_blockB_blockA newtower_blockB_table 
+puton_blockB_blockC_table
+   exclusive: puton_blockA_blockB_table noop_on_blockB_table newtower_blockC_blockA puton_blockA_blockC_table puton_blockC_table_blockA noop_clear_blockC puton_blockC_blockA_blockB puton_blockB_table_blockC noop_on_blockB_blockC newtower_blockB_blockC puton_blockB_blockA_table newtower_blockC_blockB puton_blockC_blockB_blockA newtower_blockB_table 
+puton_blockA_blockB_table
+   exclusive: newtower_blockA_table puton_blockA_blockC_table noop_on_blockA_table newtower_blockB_table puton_blockB_blockC_table noop_clear_blockB puton_blockB_table_blockC noop_on_blockB_blockC puton_blockC_table_blockA newtower_blockB_blockC puton_blockC_blockA_blockB puton_blockB_blockA_table newtower_blockC_blockB newtower_blockC_blockA puton_blockC_blockB_blockA 
+puton_blockC_table_blockA
+   exclusive: newtower_blockB_table newtower_blockA_table puton_blockA_blockC_table puton_blockB_table_blockC noop_clear_blockA noop_on_blockB_blockC puton_blockA_blockB_table puton_blockB_blockC_table newtower_blockB_blockC puton_blockC_blockA_blockB puton_blockB_blockA_table newtower_blockC_blockB newtower_blockC_blockA puton_blockC_blockB_blockA 
+puton_blockB_table_blockC
+   exclusive: noop_on_blockB_blockC newtower_blockA_table puton_blockA_blockC_table noop_on_blockB_table noop_clear_blockA noop_clear_blockC puton_blockC_blockA_blockB puton_blockC_table_blockA puton_blockA_blockB_table puton_blockB_blockC_table newtower_blockB_blockC puton_blockB_blockA_table newtower_blockC_blockB newtower_blockC_blockA puton_blockC_blockB_blockA newtower_blockB_table 
+puton_blockA_blockC_table
+   exclusive: newtower_blockA_table noop_on_blockA_table newtower_blockC_blockB noop_clear_blockC puton_blockC_blockB_blockA noop_on_blockB_blockC puton_blockB_table_blockC puton_blockC_table_blockA puton_blockA_blockB_table puton_blockB_blockC_table newtower_blockB_blockC puton_blockC_blockA_blockB puton_blockB_blockA_table newtower_blockC_blockA 
+newtower_blockA_table
+   exclusive: newtower_blockB_blockC noop_on_blockB_blockC newtower_blockC_blockA puton_blockC_blockB_blockA puton_blockA_blockC_table noop_on_blockA_table puton_blockB_table_blockC puton_blockC_table_blockA puton_blockA_blockB_table puton_blockC_blockA_blockB puton_blockB_blockA_table 
+
+Facts: 
+on_blockA_blockB
+   exclusive: clear_blockB on_blockA_table on_blockB_blockC on_blockB_blockA on_blockA_blockC 
+on_blockA_blockC
+   exclusive: clear_blockC on_blockA_table on_blockB_blockC on_blockB_blockA on_blockA_blockB 
+on_blockB_blockA
+   exclusive: clear_blockA on_blockB_table on_blockB_blockC on_blockA_blockC on_blockA_blockB 
+on_blockB_blockC
+   exclusive: on_blockB_table clear_blockC on_blockB_blockA on_blockA_blockC on_blockA_blockB 
+on_blockA_table
+   exclusive: on_blockA_blockC on_blockA_blockB 
+on_blockB_table
+   exclusive: on_blockB_blockC on_blockB_blockA 
+clear_blockA
+   exclusive: on_blockB_blockA 
+clear_blockB
+   exclusive: on_blockA_blockB 
+clear_blockC
+   exclusive: on_blockB_blockC on_blockA_blockC 
+
+Time: 3
+puton_blockB_blockC_table
+   exclusive: noop_on_blockA_blockB puton_blockA_blockB_table puton_blockB_blockC_blockA puton_blockA_blockB_blockC noop_on_blockB_blockC 
+puton_blockA_blockB_table
+   exclusive: noop_on_blockA_blockB puton_blockB_blockC_table puton_blockA_blockB_blockC puton_blockB_blockC_blockA 
+puton_blockB_blockC_blockA
+   exclusive: puton_blockA_blockB_blockC noop_on_blockA_blockB puton_blockA_blockB_table puton_blockB_blockC_table noop_on_blockB_blockC 
+puton_blockA_blockB_blockC
+   exclusive: noop_on_blockB_blockC puton_blockB_blockC_blockA noop_on_blockA_blockB puton_blockA_blockB_table puton_blockB_blockC_table 
+
+Facts: 
+on_blockA_blockB
+   exclusive: 
+on_blockB_blockC
+   exclusive: 
+goals at time 4:
+  on_blockA_blockB on_blockB_blockC 
+
+trying on_blockB_blockC from prev time step.
+Trying 3 puton_blockA_blockB_table to achieve on_blockA_blockB.
+goals at time 3:
+  on_blockB_blockC clear_blockB clear_blockA on_blockA_table 
+
+trying on_blockA_table from prev time step.
+trying clear_blockA from prev time step.
+trying clear_blockB from prev time step.
+Trying 2 puton_blockB_blockC_table to achieve on_blockB_blockC.
+goals at time 2:
+  on_blockA_table clear_blockA clear_blockB clear_blockC on_blockB_table 
+
+trying on_blockB_table from prev time step.
+trying clear_blockC from prev time step.
+trying clear_blockB from prev time step.
+Trying 1 newtower_blockC_blockA to achieve clear_blockA.
+trying on_blockA_table from prev time step.
+goals at time 1:
+  on_blockB_table clear_blockC clear_blockB on_blockC_blockA on_blockA_table 
+
+1 newtower_blockC_blockA
+2 puton_blockB_blockC_table
+3 puton_blockA_blockB_table
+0 entries in hash table, 
+2 total set-creation steps (entries + hits + plan length - 1).
+3 actions tried
+  0.09 secs
